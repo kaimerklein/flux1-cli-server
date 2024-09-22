@@ -1,4 +1,5 @@
 import torch
+import os
 
 from diffusers import FluxTransformer2DModel, FluxPipeline
 from transformers import T5EncoderModel
@@ -7,6 +8,11 @@ from flux_config import FluxConfig
 
 bfl_repo = "black-forest-labs/FLUX.1-dev"
 
+# Get the repo from environment variable. If not set, use the default repo.
+if "BFL_REPO" in os.environ:
+    bfl_repo = os.environ["BFL_REPO"]
+
+print(f"Using repo: {bfl_repo}")
 
 class FullFluxLoader:
     device: torch.device

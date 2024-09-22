@@ -2,6 +2,10 @@
 output/**/*
 !output/.gitkeep
 
+# Output images - Server mode
+images/**/*
+!output/.images
+
 # Downloaded models
 models/**/*
 !models/.gitkeep
@@ -18,3 +22,5 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+start.sh
